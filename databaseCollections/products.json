@@ -1,0 +1,5 @@
+{"_id":{"$oid":"642dac02b93200e412d2b2b1"},"description":"Apple iPhone 13 Pro Max - 256GB - Sierra Blue","image":"https://example.com/iphone-13-pro-max.jpg","pricing":1399.99,"shippingCost":20}
+{"_id":{"$oid":"642dac0cb93200e412d2b2b3"},"description":"Samsung Galaxy S21 Ultra 5G - 512GB - Phantom Black","image":"https://example.com/samsung-galaxy-s21-ultra.jpg","pricing":1599.99,"shippingCost":15}
+{"_id":{"$oid":"642dac17b93200e412d2b2b5"},"description":"Sony WH-1000XM4 Wireless Noise-Canceling Over-Ear Headphones","image":"https://example.com/sony-wh-1000xm4.jpg","pricing":349.99,"shippingCost":12}
+{"_id":{"$oid":"64357c1e30302bb5af7a9603"},"description":"Macbook","image":"https://example.com/macbook.jpg","pricing":2159.99,"shippingCost":15,"__v":0}
+{"_id":{"$oid":"6435a79c3ad89f55b979ab20"},"description":"Macbook Air","image":"https://example.com/macbook_air.jpg","pricing":2159.99,"shippingCost":10,"__v":0}

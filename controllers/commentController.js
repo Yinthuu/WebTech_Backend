@@ -108,19 +108,6 @@ exports.deleteComment = async (req, res) => {
     }
   };
   
-
-    // GET /comments/product/:productId
-    // exports.getCommentsByProduct = async (req, res) => {
-    //   try {
-    //     const comment = await Comment.find({ product: req.params.productId});
-    //     if (!comment || comment.length === 0) {
-    //       return res.status(404).json({ message: 'Comment not found for this product' });
-    //     }
-    //     res.status(200).json(comment);
-    //   } catch (error) {
-    //     res.status(500).json({ message: error.message });
-    //   }
-    // };
     exports.getCommentsByProduct = async (req, res) => {
       try {
         const comments = await Comment.find({ product: req.params.productId }).populate('user', 'username');

@@ -77,6 +77,8 @@ exports.deleteOrders = async (req, res) => {
   exports.getOrderByUserandProduct = async (req, res) => {
     try {
       const { userId, productId } = req.params;
+      console.log(userId);
+      console.log(productId);
       const order = await Order.findOne({ user: userId, product: productId });
       if (!order) {
         return res.status(404).json({ message: 'Order not found' });

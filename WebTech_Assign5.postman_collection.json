@@ -1,0 +1,1371 @@
+{
+	"info": {
+		"_postman_id": "4b0feeee-269a-4cb4-8a1f-9ee4b1c57899",
+		"name": "WebTech_Assign5",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2768374"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "{userId}",
+							"item": [
+								{
+									"name": "Get a user",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/users/642cdd66b93200e412d2b2a6",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"642cdd66b93200e412d2b2a6"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get a user (failed)",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/users/643458986cb3c592fea2b272",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"643458986cb3c592fea2b272"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update a user",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "    {\n        \"password\": \"123\",\n        \"username\": \"test\"\n    }",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/643458986cb3c592fea2b271",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"643458986cb3c592fea2b271"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update a user (failed)",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "    {\n        \"email\": \"test@email.com\",\n        \"password\": \"123\",\n        \"username\": \"test\"\n    }",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/643458986cb3c592fea2b272",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"643458986cb3c592fea2b272"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Get all users",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a user",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n        \"email\": \"orchidmay@email.com\",\n        \"password\": \"234\",\n        \"username\": \"OrchidMay\",\n        \"purchase_history\": [1],\n        \"shipping_address\": \"Street 1, Building 1B, Waterloo, Ontario, Canada\"\n    }",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a user (Failed)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"orchidmay@email.com\",\n  \"password\": \"253dsg\",\n  \"username\": \"Rose\",\n  \"shipping_address\": \"Toronto, Rock Street, Canada\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Product",
+					"item": [
+						{
+							"name": "{productId}",
+							"item": [
+								{
+									"name": "Get a product",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/642dac02b93200e412d2b2b1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												"642dac02b93200e412d2b2b1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get a product (failed)",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/642dac17b93200e412d2b2b6",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												"642dac17b93200e412d2b2b6"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update a product",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "    {\n        \"image\": \"https://pisces.bbystatic.com/prescaled/500/500/image2/BestBuy_US/images/products/6428/6428314_sd.jpg\"\n    }",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/products/642dac17b93200e412d2b2b5",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												"642dac17b93200e412d2b2b5"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update a product (failed)",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "    {\n        \"description\": \"Macbook\",\n        \"image\": \"https://example.com/macbook.jpg\",\n        \"pricing\": 2159.99,\n        \"shippingCost\": 15\n    }",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/products/64357c1e30302bb5af7a9605",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												"64357c1e30302bb5af7a9605"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete a product",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/64357c1e30302bb5af7a9603",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												"64357c1e30302bb5af7a9603"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete a product (failed)",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/64357c7730302bb5af7a9609",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												"64357c7730302bb5af7a9609"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Get all products",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a product",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n        \"description\": \" Heavy Duty Protective iPhone XR Phone Case with Built in Kickstand 6.1 inch Night Purple\",\n        \"image\": \"https://m.media-amazon.com/images/I/81ikgpwtVxL._AC_SX679_.jpg\",\n        \"pricing\": 90,\n        \"shippingCost\": 15,\n        \"title\": \"iPhone Case\"\n    }",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a product (failed)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n        \"description\": \"Macbook\",\n        \"image\": \"https://example.com/macbook.jpg\",\n        \"pricing\": 2159.99,\n        \"shippingCost\": 10\n    }",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Order",
+					"item": [
+						{
+							"name": "{orderId}",
+							"item": [
+								{
+									"name": "Get an order",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/orders/64358273447154374af7be7f",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"orders",
+												"64358273447154374af7be7f"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get an order (failed)",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/orders/64358273447154374af7be7a",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"orders",
+												"64358273447154374af7be7a"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update an order",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "    {\n        \"product\": \"642dac17b93200e412d2b2b5\",\n        \"quantity\": 11\n    }",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/orders/64358273447154374af7be7f",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"orders",
+												"64358273447154374af7be7f"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update an order (failed)",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "    {\n        \"product\": \"642dac17b93200e412d2b2b5\",\n        \"quantity\": 10\n    }",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/orders/64358273447154374af7be7a",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"orders",
+												"64358273447154374af7be7a"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete an order",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/orders/64358273447154374af7be7f",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"orders",
+												"64358273447154374af7be7f"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete an order (failed)",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/orders/642dbb46b93200e412d2b2da",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"orders",
+												"642dbb46b93200e412d2b2da"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Get all orders",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/orders/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"orders",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create an order",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n        \"orderNumber\": 123456785,\n        \"product\": \"6434579d6cb3c592fea2b26f\",\n        \"user\": \"643611e607cdb92824bb6065\",\n        \"quantity\": 1\n    }",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/orders/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"orders",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Comment",
+					"item": [
+						{
+							"name": "{commentId}",
+							"item": [
+								{
+									"name": "get a comment",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/comments/6436186607cdb92824bb60af",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"comments",
+												"6436186607cdb92824bb60af"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get a comment by user and product",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/comments/userproduct/642cdd66b93200e412d2b2a6/64357c1e30302bb5af7a9603",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"comments",
+												"userproduct",
+												"642cdd66b93200e412d2b2a6",
+												"64357c1e30302bb5af7a9603"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get a comment by  product",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/comments/product/642dac02b93200e412d2b2b1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"comments",
+												"product",
+												"642dac02b93200e412d2b2b1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get a comment (failed)",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/comments/6435832c55e9650ff8d81491",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"comments",
+												"6435832c55e9650ff8d81491"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update a comment",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{        \n        \"rating\": 4.8\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/comments/6436069507cdb92824bb6049",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"comments",
+												"6436069507cdb92824bb6049"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update a comment (failed)",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "    {\n        \"rating\": 4.9,\n        \"images\": [\n            \"https://example.com/642cdd66b93200e412d2b2a6-review-1.jpg\",\n            \"https://example.com/642cdd66b93200e412d2b2a6-review-3.jpg\"\n        ],\n        \"text\": \"I recently purchased this product and so far I'm very impressed!\"\n    }",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/comments/6435a2927fb21c40f91d9691",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"comments",
+												"6435a2927fb21c40f91d9691"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete a comment",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/comments/6436186607cdb92824bb60af",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"comments",
+												"6436186607cdb92824bb60af"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete a comment (failed)",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/comments/642db0c4b93200e412d2b2ba",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"comments",
+												"642db0c4b93200e412d2b2ba"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "get all comments",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/comments",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"comments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create a comment",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n        \"_id\": \"6438d12e87e533331a58ec33\",\n        \"product\": \"642dac02b93200e412d2b2b1\",\n        \"user\": \"6434579d6cb3c592fea2b26f\",\n        \"rating\": 4.5,\n        \"text\": \"Good.\",\n        \"images\": \"6ecba34b23af47a456831992073230f6\"\n    }",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/comments",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"comments"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Cart",
+					"item": [
+						{
+							"name": "{cartId}",
+							"item": [
+								{
+									"name": "get a cartitem",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/carts/6436070c07cdb92824bb6053",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"carts",
+												"6436070c07cdb92824bb6053"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get all cartitems by user",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/carts/user/6434579d6cb3c592fea2b26f",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"carts",
+												"user",
+												"6434579d6cb3c592fea2b26f"
+											],
+											"query": [
+												{
+													"key": "user",
+													"value": "642cdd66b93200e412d2b2a6",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get a cartitem (failed)",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/carts/642db8c6b93200e412d2b2d1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"carts",
+												"642db8c6b93200e412d2b2d1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update a cartitem",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "    {\n        \"quantities\": 4\n    }",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/carts/6436070c07cdb92824bb6053",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"carts",
+												"6436070c07cdb92824bb6053"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update a cartitem (failed)",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "    {\n        \"quantities\": 3\n    }",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/carts/643583ab55e9650ff8d8149a",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"carts",
+												"643583ab55e9650ff8d8149a"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete a cartitem",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/carts/643793ca59995c70616ae391",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"carts",
+												"643793ca59995c70616ae391"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete a cartitem (failed)",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/carts/642db8c6b93200e412d2b2d1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"carts",
+												"642db8c6b93200e412d2b2d1"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "get all cartitems",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/carts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"carts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create a cartitem",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n        \"products\": \"642dac17b93200e412d2b2b5\",\n        \"quantities\": 2,\n        \"user\": \"642cdd66b93200e412d2b2a6\"\n    }",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/carts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"carts"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "guestcarts",
+					"item": [
+						{
+							"name": "New Request",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/guestcarts/643ef943f674dfd66d3ae136",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"guestcarts",
+										"643ef943f674dfd66d3ae136"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/guestcarts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"guestcarts"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8081"
+		}
+	]
+}

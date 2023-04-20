@@ -5,7 +5,6 @@ const GuestCart  = require('../models/guestCart');
 exports.getAllItems = async (req, res) => {
     try {
       const guestcarts = await GuestCart.find().populate('products', 'title image pricing');;
-      console.log(guestcarts);
       res.status(200).json(guestcarts);
     } catch (error) {
       res.status(500).json({ message: error.message });
@@ -39,3 +38,32 @@ exports.createGuestCartItem = async (req, res) => {
       res.status(400).json({ message: error.message });
     }
   };
+
+  // DELETE guestcarts by id
+exports.deleteGuestCartById = async (req, res) => {
+  try {
+    const guestCart = await GuestCart.findByIdAndDelete(req.params.id);
+    if (!guestCart) {
+      return res.status(404).json({ message: 'GuestCart not found' });
+    }
+    res.json({ message: 'GuestCart deleted successfully' });
+  } catch (error) {
+    console.log("error"+error.message);
+    res.status(500).json({ message: error.message });
+  }
+};
+
+// PATCH /carts/:id
+exports.updateGuestCarts = async (req, res) => {
+  try {
+    const guestCart = await GuestCart.findById(req.params.id);
+    if (!guestCart) {
+      return res.status(404).json({ message: 'Guestcarts not found' });
+    }
+    guestCart.quantities = req.body.quantities;
+    const updatedGuestcarts = await guestCart.save();
+    res.json(updatedGuestcarts);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};

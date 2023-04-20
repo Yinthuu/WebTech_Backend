@@ -12,4 +12,6 @@ router.patch('/orders/:id', orderController.updateOrders);
 
 router.delete('/orders/:id', orderController.deleteOrders);
 
+router.get('/orders/userproduct/:userId/:productId', orderController.getOrderByUserandProduct);
+
 module.exports = router;

@@ -71,3 +71,18 @@ exports.deleteOrders = async (req, res) => {
       res.status(500).json({ message: error.message });
     }
   };
+
+
+  // GET /orders/userproduct/:userId/:productId
+  exports.getOrderByUserandProduct = async (req, res) => {
+    try {
+      const { userId, productId } = req.params;
+      const order = await Order.findOne({ user: userId, product: productId });
+      if (!order) {
+        return res.status(404).json({ message: 'Order not found' });
+      }
+      res.status(200).json(order);
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+  };
